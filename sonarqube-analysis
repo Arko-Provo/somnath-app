@@ -20,7 +20,7 @@ node{
            [
            artifactId: 'myweb', 
            classifier: '', 
-           file: 'target/my-app-1.0.0.war', 
+           file: '/var/jenkins/workspace/dir/target/my-app-1.0.0.war', 
            type: 'war'
            ]
            ],
