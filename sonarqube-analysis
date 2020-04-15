@@ -1,6 +1,6 @@
 node{
    stage('SCM Checkout'){
-     git 'https://github.com/javahometech/my-app'
+     git 'https://github.com/Arko-Provo/my-app.git'
    }
    stage('Compile-Package'){
       // Get maven home path
@@ -14,6 +14,22 @@ node{
           sh "${mvnHome}/bin/mvn sonar:sonar"
         }
     }
-   
-
+    stage('Upload War file to Nexus'){
+    steps{
+    nexusArtifactUploader artifacts: [
+           [
+           artifactId: 'myweb', 
+           classifier: '', 
+           file: 'target/my-app-1.0.0.war', 
+           type: 'war']
+           ],
+           credentialsId: 'Nexus_2', 
+           groupId: 'in.javahome', 
+           nexusUrl: '172.31.12.22:8081', 
+           nexusVersion: 'nexus3', 
+           protocol: 'http', 
+           repository: 'http://18.224.51.17:8081/repository/Simpleapp-release', 
+           version: '1.0.0'
+ }  
+}
 }
