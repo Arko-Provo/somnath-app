@@ -26,7 +26,7 @@ node{
            ],
            credentialsId: 'Nexus_2', 
            groupId: 'in.javahome', 
-           nexusUrl: '18.224.51.17:8081', 
+           nexusUrl: '18.222.182.217:8081', 
            nexusVersion: 'nexus3', 
            protocol: 'http', 
            repository: 'Simpleapp-release', 
