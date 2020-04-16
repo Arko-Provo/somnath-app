@@ -14,10 +14,10 @@ node{
           sh "${mvnHome}/bin/mvn sonar:sonar"
         }
     }
-    stage('Upload War file to Nexus'){
+   /* stage('Upload War file to Nexus'){
     steps{
    nexusPublisher nexusInstanceId: 'nexus', 
    nexusRepositoryId: 'Simpleapp-release', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/Test_pipeline/target/myweb-1.0.0.war']], mavenCoordinate: [artifactId: 'myweb', groupId: 'in.javahome', packaging: 'war', version: '1.0.0']]]
  }  
-}
+}*/
 }
