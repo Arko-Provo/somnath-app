@@ -21,7 +21,7 @@ node{
    filePath: '/var/lib/jenkins/workspace/Test_pipeline/target/myweb-2.0.0.war']], 
    mavenCoordinate: [artifactId: 'myweb', groupId: 'in.javahome', packaging: 'war', version: '2.0.0']]]
 }
- stage('Deploy to Tomcat server'){
+/* stage('Deploy to Tomcat server'){
  when{
      expression {
       return env.GIT_BRANCH == 'master';
@@ -35,5 +35,5 @@ node{
    mavenCoordinate: [artifactId: 'myweb', groupId: 'in.javahome', packaging: 'war', version: '2.0.0']]]
    }
    sh "ssh ansadmin@ip-172-31-38-249 ansible-playbook /var/lib/jenkins/workspace/Test_pipeline/azure-pipelines.yml"
-   }
+   } */
 }
