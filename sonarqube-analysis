@@ -22,11 +22,11 @@ node{
    mavenCoordinate: [artifactId: 'myweb', groupId: 'in.javahome', packaging: 'war', version: '2.0.0']]]
 }
 stage('Deploy to Tomcat server'){
-/* when{
+when{
      expression {
       return env.GIT_BRANCH == 'master';
           }
-      }*/
+      }
      nexusPublisher nexusInstanceId: 'nexus', 
    nexusRepositoryId: 'maven-releases', 
    packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', 
