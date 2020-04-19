@@ -27,13 +27,11 @@ stage('Deploy to Tomcat server'){
       return env.GIT_BRANCH == 'master';
           }
       }
-  steps {
      nexusPublisher nexusInstanceId: 'nexus', 
    nexusRepositoryId: 'maven-releases', 
    packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', 
    filePath: '/var/lib/jenkins/workspace/Test_pipeline/target/myweb-2.0.0.war']], 
    mavenCoordinate: [artifactId: 'myweb', groupId: 'in.javahome', packaging: 'war', version: '2.0.0']]]
-   }
    sh "ssh ansadmin@ip-172-31-38-249 ansible-playbook /var/lib/jenkins/workspace/Test_pipeline/azure-pipelines.yml"
    } 
 }
