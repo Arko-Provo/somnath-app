@@ -19,7 +19,7 @@ node{
    nexusRepositoryId: 'maven-releases', 
    packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', 
    filePath: '/var/lib/jenkins/workspace/Test_pipeline/target/myweb-2.0.0.war']], 
-   mavenCoordinate: [artifactId: 'myweb', groupId: 'in.javahome', packaging: 'war', version: '1.0.0']]]
+   mavenCoordinate: [artifactId: 'myweb', groupId: 'in.javahome', packaging: 'war', version: '2.0.0']]]
 }
 stage('Deploy to Tomcat server'){
 /*when{
