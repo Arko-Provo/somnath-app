@@ -27,11 +27,11 @@ stage('Deploy to Tomcat server'){
       return env.GIT_BRANCH == 'master';
           }
       }*/
-     nexusPublisher nexusInstanceId: 'nexus', 
+   /*  nexusPublisher nexusInstanceId: 'nexus', 
    nexusRepositoryId: 'maven-releases', 
    packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', 
    filePath: '/var/lib/jenkins/workspace/Test_pipeline/target/myweb-2.0.0.war']], 
-   mavenCoordinate: [artifactId: 'myweb', groupId: 'in.javahome', packaging: 'war', version: '2.0.0']]]
+   mavenCoordinate: [artifactId: 'myweb', groupId: 'in.javahome', packaging: 'war', version: '2.0.0']]]*/
    sh "ssh ec2-user@3.133.115.125 ansible-playbook /opt/main.yml"
    } 
 }
